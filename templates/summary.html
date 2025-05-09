@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>MMT Cargo Summary</h1>
+
+  <h3>Overall Totals</h3>
+  <ul>
+    <li>Total Sales: ₹{{ total_sales }}</li>
+    <li>Total Income: ₹{{ total_income }}</li>
+    <li>Total Expenses: ₹{{ total_expenses }}</li>
+    <li>Total Withdrawals: ₹{{ total_withdrawals }}</li>
+  </ul>
+
+  <h3>Partner-wise Withdrawals</h3>
+  <ul>
+    <li>Manager: ₹{{ partner_totals["Manager"] }}</li>
+    <li>Partner 1: ₹{{ partner_totals["Partner 1"] }}</li>
+    <li>Partner 2: ₹{{ partner_totals["Partner 2"] }}</li>
+    <li>Partner 3: ₹{{ partner_totals["Partner 3"] }}</li>
+  </ul>
+
+  <br><a href="/">Back to Dashboard</a>
+</body>
+</html>
