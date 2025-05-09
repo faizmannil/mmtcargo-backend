@@ -1,3 +1,16 @@
+@app.route('/')
+def home():
+    return '''
+    <h1>Welcome to MMT Cargo Dashboard</h1>
+    <ul>
+        <li><a href="/sales">Sales</a></li>
+        <li><a href="/income">Income</a></li>
+        <li><a href="/expenses">Expenses</a></li>
+        <li><a href="/withdrawals">Withdrawals</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+    '''
+
 from flask import Flask, render_template, request, redirect
 import sqlite3
 
