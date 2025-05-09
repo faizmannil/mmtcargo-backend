@@ -1,3 +1,9 @@
+from flask import Flask, render_template, request, redirect
+import sqlite3
+
+app = Flask(__name__)
+
+# ------------------ HOME ------------------
 @app.route('/')
 def home():
     return '''
@@ -10,11 +16,6 @@ def home():
         <li><a href="/login">Login</a></li>
     </ul>
     '''
-
-from flask import Flask, render_template, request, redirect
-import sqlite3
-
-app = Flask(__name__)
 
 # ------------------ SALES ------------------
 @app.route('/sales')
@@ -108,7 +109,7 @@ def add_withdrawal():
     conn.close()
     return redirect('/withdrawals')
 
-# ------------------ LOGIN (static form) ------------------
+# ------------------ LOGIN ------------------
 @app.route('/login')
 def login():
     return render_template("login.html")
