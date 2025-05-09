@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sales - MMT Cargo</title>
-</head>
+<head><title>Sales</title></head>
 <body>
-  <h1>Sales Page</h1>
-  <p>This page will display cargo sales data.</p>
+  <h1>Sales</h1>
+  <form action="/add-sale" method="POST">
+    <input type="text" name="customer" placeholder="Customer" required>
+    <input type="number" name="amount" placeholder="Amount" required>
+    <input type="date" name="date" required>
+    <button type="submit">Add Sale</button>
+  </form>
+  <table border="1">
+    <tr><th>ID</th><th>Customer</th><th>Amount</th><th>Date</th></tr>
+    {% for sale in sales %}
+    <tr><td>{{ sale[0] }}</td><td>{{ sale[1] }}</td><td>{{ sale[2] }}</td><td>{{ sale[3] }}</td></tr>
+    {% endfor %}
+  </table>
 </body>
 </html>

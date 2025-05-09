@@ -2,7 +2,18 @@
 <html>
 <head><title>Withdrawals</title></head>
 <body>
-  <h1>Withdrawals Page</h1>
-  <p>This is where withdrawal info will go.</p>
+  <h1>Withdrawals</h1>
+  <form action="/add-withdrawal" method="POST">
+    <input type="text" name="method" placeholder="Withdrawal Method" required>
+    <input type="number" name="amount" placeholder="Amount" required>
+    <input type="date" name="date" required>
+    <button type="submit">Add Withdrawal</button>
+  </form>
+  <table border="1">
+    <tr><th>ID</th><th>Method</th><th>Amount</th><th>Date</th></tr>
+    {% for row in withdrawals %}
+    <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td><td>{{ row[3] }}</td></tr>
+    {% endfor %}
+  </table>
 </body>
 </html>

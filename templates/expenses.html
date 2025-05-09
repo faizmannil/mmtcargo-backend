@@ -2,7 +2,18 @@
 <html>
 <head><title>Expenses</title></head>
 <body>
-  <h1>Expenses Page</h1>
-  <p>This is where expenses data will go.</p>
+  <h1>Expenses</h1>
+  <form action="/add-expense" method="POST">
+    <input type="text" name="category" placeholder="Category" required>
+    <input type="number" name="amount" placeholder="Amount" required>
+    <input type="date" name="date" required>
+    <button type="submit">Add Expense</button>
+  </form>
+  <table border="1">
+    <tr><th>ID</th><th>Category</th><th>Amount</th><th>Date</th></tr>
+    {% for row in expenses %}
+    <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td><td>{{ row[3] }}</td></tr>
+    {% endfor %}
+  </table>
 </body>
 </html>
